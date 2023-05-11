@@ -11,7 +11,6 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     CheckBox cAyam, cMie, cBakso;
-    String[] menu;
     Button pesan;
     TextView pilihan1, pilihan2, pilihan3;
 
@@ -19,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        String[] menu = {"", "", ""};
 
         cAyam = (CheckBox) findViewById(R.id.ayam);
         cBakso = (CheckBox) findViewById(R.id.bakso);
@@ -33,19 +34,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(cAyam.isChecked()) {
                     menu[0] = "Ayam Goreng";
-                }else {
+                }else if(!cAyam.isChecked()){
                     menu[0] = " ";
                 }
 
                 if(cBakso.isChecked()) {
                     menu[1] = "Bakso";
-                }else {
+                }else if(!cBakso.isChecked()){
                     menu[1] = " ";
                 }
 
                 if(cMie.isChecked()) {
                     menu[2] = "Mie Rebus";
-                }else {
+                }else if(!cMie.isChecked()){
                     menu[2] = " ";
                 }
 
